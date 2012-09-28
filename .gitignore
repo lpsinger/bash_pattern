@@ -1,9 +1,12 @@
 *.log
 *.in
 *.status
+*.lo
+*.la
 autom4te.cache
 Makefile
 configure
+.libs
 .deps
 aclocal.m4
 config.guess
