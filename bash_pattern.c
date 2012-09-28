@@ -1,5 +1,6 @@
 #include "bash_pattern.h"
 
+#include <stdlib.h>
 #include <string.h>
 
 
@@ -44,14 +45,15 @@ void bash_pattern_free(bash_pattern *head)
             case BASH_PATTERN_ALTERNATIVES:
             {
                 bash_pattern_alternatives *alternatives = (bash_pattern_alternatives *)head;
-                const bash_pattern **node;
-                for (node = alternatives->nodes; node; node++)
+                bash_pattern **node;
+                for (node = alternatives->nodes; *node; node++)
                     free(node);
                 free(alternatives->nodes);
             }
                 break;
             default:
                 /* No action needed */
+                break;
         }
 
         free(head);
@@ -69,7 +71,7 @@ int bash_pattern_matches(const bash_pattern *head, const char *text)
         {
             case BASH_PATTERN_STRING_LITERAL:
             {
-                const bash_pattern_string_literal *string_literal = (bash_pattern_string_literal *) head;
+                const bash_pattern_string_literal *string_literal = (const bash_pattern_string_literal *) head;
                 return !strncmp(string_literal->text, text, string_literal->len) && bash_pattern_matches(head->next, text + string_literal->len);
             }
             case BASH_PATTERN_ANY_STRING:
@@ -84,9 +86,9 @@ int bash_pattern_matches(const bash_pattern *head, const char *text)
                 return (*text) && bash_pattern_matches(head->next, text + 1);
             case BASH_PATTERN_ALTERNATIVES:
             {
-                const bash_pattern_alternatives *alternatives = (bash_pattern_alternatives *)head;
-                const bash_pattern **node;
-                for (node = alternatives->nodes; node; node++)
+                const bash_pattern_alternatives *alternatives = (const bash_pattern_alternatives *) head;
+                bash_pattern **node;
+                for (node = alternatives->nodes; *node; node++)
                     if (bash_pattern_matches(*node, text))
                         return 1;
                 return 0;
