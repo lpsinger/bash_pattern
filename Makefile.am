@@ -1,3 +1,5 @@
+ACLOCAL_AMFLAGS = -I m4
+
 lib_LTLIBRARIES = libbash_pattern.la
-libbash_pattern_la_SOURCES = bash_pattern.c
-libbash_pattern_la_HEADERS = bash_pattern.h
+libbash_pattern_la_SOURCES = bash_pattern.c bash_pattern.h
+include_HEADERS = bash_pattern.h
