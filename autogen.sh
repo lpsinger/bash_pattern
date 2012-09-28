@@ -1,2 +1,2 @@
 #!/bin/sh
-autoreconf --install
+mkdir -p m4 && autoreconf --install
