@@ -1,8 +1,10 @@
 *.log
 *.in
 *.status
+*.o
 *.lo
 *.la
+m4
 autom4te.cache
 Makefile
 configure
