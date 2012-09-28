@@ -4,7 +4,8 @@
 
 #ifdef __cplusplus
 extern "C" {
-#else
+#endif
+#if 0
 } /* so that editor will match brace */
 #endif
 
@@ -18,9 +19,10 @@ void bash_pattern_free(bash_pattern *pattern);
 int bash_pattern_matches(bash_pattern *pattern, char *text);
 
 
-#ifndef __cplusplus
+#if 0
 { /* so that editor will match brace */
-#else
+#endif
+#ifdef __cplusplus
 } /* extern "C" */
 #endif
 
