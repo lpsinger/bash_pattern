@@ -14,9 +14,9 @@ struct bash_pattern_t;
 typedef struct bash_pattern_t bash_pattern;
 
 
-bash_pattern *bash_pattern_compile(const char *pattern);
-void bash_pattern_free(bash_pattern *pattern);
-int bash_pattern_matches(const bash_pattern *pattern, const char *text);
+bash_pattern *bash_pattern_compile(const char *);
+void bash_pattern_free(bash_pattern *);
+int bash_pattern_matches(const bash_pattern *, const char *);
 
 
 #if 0
