@@ -31,7 +31,7 @@ int main(int argc, char **argv)
         return EX_USAGE;
     }
 
-    fprintf(stderr, "Compling pattern: %s\n", argv[1]);
+    fprintf(stderr, "Compiling pattern: %s\n", argv[1]);
     pattern = bash_pattern_compile(argv[1]);
 
     fprintf(stderr, "Matching against text: %s\n", argv[2]);

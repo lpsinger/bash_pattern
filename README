@@ -1,4 +1,5 @@
 C library for approximately bash-compatible pattern matching.
+
 Supports the following features:
 
  - The '*' wildcard, which matches any sequence of zero or more characters.
@@ -12,3 +13,17 @@ to generate the configure script.
 
 If you have unpacked the source code from a tarball, then you can just follow
 the standard 'configure; make; make install' recipe to install the library.
+
+
+To take it for a quick test drive, just run the bash_pattern_test program.
+
+
+  $ bash_pattern_test
+  Usage: bash_pattern_test 'pattern' 'text'
+
+
+  $ bash_pattern_test 'Hello, {l{on,ov}e}ly {world,planet}.' 'Hello, lovely world.'
+  Compiling pattern: Hello, {l{on,ov}e}ly {world,planet}.
+  Matching against text: Hello, lovely world.
+  Match: YES
+  Freeing pattern
