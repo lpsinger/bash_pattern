@@ -24,5 +24,6 @@ AC_TYPE_SIZE_T
 
 # Checks for library functions.
 
+AX_CREATE_PKGCONFIG_INFO
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT

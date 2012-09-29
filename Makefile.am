@@ -6,3 +6,6 @@ include_HEADERS = bash_pattern.h
 
 bin_PROGRAMS = bash_pattern_test
 bash_pattern_test_LDADD = libbash_pattern.la
+
+pkgconfigdir = $(libdir)/pkgconfig
+nodist_pkgconfig_DATA = @PACKAGE_NAME@.pc
