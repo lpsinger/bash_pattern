@@ -18,3 +18,4 @@ install-sh
 libtool
 ltmain.sh
 missing
+bash_pattern_test
