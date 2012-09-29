@@ -1,0 +1,14 @@
+C library for approximately bash-compatible pattern matching.
+Supports the following features:
+
+ - The '*' wildcard, which matches any sequence of zero or more characters.
+ - The '?' wildcard, which matches exactly one character.
+ - Brace syntax for alternatives, such that {foo,bar,bat} matches any of
+   foo, bar, or bat. Braces can also contain other braces and wildcards.
+ - Escaping any of the above special characters by preceding it with a '\'.
+
+If you have cloned the git repository, then you should first run ./autogen.sh
+to generate the configure script.
+
+If you have unpacked the source code from a tarball, then you can just follow
+the standard 'configure; make; make install' recipe to install the library.
