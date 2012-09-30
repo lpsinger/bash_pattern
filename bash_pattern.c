@@ -66,6 +66,7 @@ static void bash_pattern_compile_literal(bash_pattern_alternatives *container, b
         bash_pattern_compile1(container, head, next, pattern, 0);
     } else {
         string_literal = malloc(sizeof(bash_pattern_string_literal));
+        ((bash_pattern *) string_literal)->kind = BASH_PATTERN_STRING_LITERAL;
         string_literal->len = 1;
         string_literal->text = malloc(1);
         string_literal->text[0] = **pattern;
