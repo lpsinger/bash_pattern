@@ -176,8 +176,17 @@ static void bash_pattern_fallthrough(bash_pattern *head, bash_pattern *togoto)
 bash_pattern *bash_pattern_compile(const char *pattern)
 {
     bash_pattern *ret;
-    bash_pattern_compile1(NULL, NULL, &ret, &pattern, 0);
-    bash_pattern_fallthrough(ret, NULL);
+
+    if (*pattern)
+    {
+        /* Non-empty pattern */
+        bash_pattern_compile1(NULL, NULL, &ret, &pattern, 0);
+        bash_pattern_fallthrough(ret, NULL);
+    } else {
+        /* Empty pattern */
+        ret = bash_pattern_new_empty_literal();
+    }
+
     return ret;
 }
 
