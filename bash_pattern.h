@@ -34,8 +34,20 @@ struct bash_pattern_t;
 typedef struct bash_pattern_t bash_pattern;
 
 
+/**
+ * Compile a pattern expression from a string. Return a new compiled pattern,
+ * or NULL the expression cannot be compiled.
+ */
 bash_pattern *bash_pattern_compile(const char *);
+
+/**
+ * Release memory associated with a compiled pattern.
+ */
 void bash_pattern_free(bash_pattern *);
+
+/**
+ * Return 1 if the text matches the compiled pattern, or 0 otherwise.
+ */
 int bash_pattern_matches(const bash_pattern *, const char *);
 
 
