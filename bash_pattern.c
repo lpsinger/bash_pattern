@@ -281,3 +281,12 @@ int bash_pattern_matches(const bash_pattern *head, const char *text)
         return !(*text);
     }
 }
+
+
+int bash_pattern_is_flat(const bash_pattern *head)
+{
+    for (; head; head = head->next)
+        if (head->kind == BASH_PATTERN_ALTERNATIVES)
+            return 0;
+    return 1;
+}

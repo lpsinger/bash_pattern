@@ -50,6 +50,13 @@ void bash_pattern_free(bash_pattern *);
  */
 int bash_pattern_matches(const bash_pattern *, const char *);
 
+/**
+ * Determine if the compiled pattern is flat, or has no brace alternatives
+ * like {FOO,BAR,BAT}. Return 1 if the pattern is flat, or 0 otherwise. A flat
+ * pattern expression contains only literals and * and ? wildcards.
+ */
+int bash_pattern_is_flat(const bash_pattern *);
+
 
 #if 0
 { /* so that editor will match brace */
