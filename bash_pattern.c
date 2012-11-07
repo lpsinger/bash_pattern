@@ -272,6 +272,9 @@ int bash_pattern_matches(const bash_pattern *head, const char *text)
             default:
                 /* Should not be reached. */
                 abort();
+                /* MSVC doesn't know that abort() prevents the function from
+                 * returning. Silence its warning. */
+                return 0;
         }
     } else {
         /* There are no tokens left. */
