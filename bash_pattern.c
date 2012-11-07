@@ -234,7 +234,7 @@ static void bash_pattern_free1(bash_pattern *head, bash_pattern *sentinel)
 
 void bash_pattern_free(bash_pattern *head)
 {
-    return bash_pattern_free1(head, NULL);
+    bash_pattern_free1(head, NULL);
 }
 
 
