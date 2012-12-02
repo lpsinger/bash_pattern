@@ -1,7 +1,7 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.69])
+AC_PREREQ([2.68])
 AC_INIT([bash_pattern], [0.1], [leo.singer@ligo.org])
 AC_CONFIG_SRCDIR([bash_pattern.c])
 AC_CONFIG_MACRO_DIR([m4])
